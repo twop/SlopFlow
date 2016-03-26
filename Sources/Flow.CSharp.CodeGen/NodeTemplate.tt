@@ -1,0 +1,37 @@
+﻿<#@ template language="C#" visibility="internal"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="model" type="Flow.CodeGen.Models.NodeModel" #>
+using Flow.CSharp.Core;
+
+// ------------------------------------------------------------------------------
+// Auto-generated
+// ------------------------------------------------------------------------------
+namespace <#= model.NameSpace #>
+{
+	partial class <#= model.Type #>: Node
+	{
+		#region Input
+<# foreach (var input in model.Inputs) { #>
+		//In
+		public readonly Input<<#= input.Type #>> <#= input.Name #> = new Input<<#= input.Type #>>();
+<# } #>
+		#endregion
+
+		#region Output
+<# foreach (var output in model.Outputs) { #>
+		//Out
+		public readonly Output<<#= output.Type #>> <#= output.Name #> = new Output<<#= output.Type #>>();
+<# } #>
+		#endregion
+
+		public <#= model.Type #>()
+		{
+<# foreach (var input in model.Inputs) { #>
+			AddInput(<#= input.Name #>);
+<# } #>
+		}
+	}
+}
