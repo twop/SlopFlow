@@ -15,18 +15,18 @@ namespace Samples.Sum4Flow
 
 		#region Input
 		//In
-		public Input<System.Int32> InputNode1_Val1 => InputNode1.Val1;
+		public Input<int> Input1 => InputNode1.Val1;
 		//In
-		public Input<System.Int32> InputNode1_Val2 => InputNode1.Val2;
+		public Input<int> Input2 => InputNode1.Val2;
 		//In
-		public Input<System.Int32> InputNode2_Val1 => InputNode2.Val1;
+		public Input<int> Input3 => InputNode2.Val1;
 		//In
-		public Input<System.Int32> InputNode2_Val2 => InputNode2.Val2;
+		public Input<int> Input4 => InputNode2.Val2;
 		#endregion
 	
 		#region Output
 		//Out
-		public Output<System.Int32> ResultNode_Result => ResultNode.Result;
+		public Output<int> Output => ResultNode.Result;
 		#endregion
 
 		public Sum4()
@@ -35,12 +35,12 @@ namespace Samples.Sum4Flow
 			ResultNode.Val2.SetDependency(InputNode2.Result);
 		}
 
-		public void Run ( System.Int32 argInputNode1_Val1, System.Int32 argInputNode1_Val2, System.Int32 argInputNode2_Val1, System.Int32 argInputNode2_Val2 )
+		public void Run ( int argInput1, int argInput2, int argInput3, int argInput4 )
 		{
-			InputNode1.Val1.SetValueDirectly(argInputNode1_Val1);
-			InputNode1.Val2.SetValueDirectly(argInputNode1_Val2);
-			InputNode2.Val1.SetValueDirectly(argInputNode2_Val1);
-			InputNode2.Val2.SetValueDirectly(argInputNode2_Val2);
+			InputNode1.Val1.SetValueDirectly(argInput1);
+			InputNode1.Val2.SetValueDirectly(argInput2);
+			InputNode2.Val1.SetValueDirectly(argInput3);
+			InputNode2.Val2.SetValueDirectly(argInput4);
 		}
 	}	
 }

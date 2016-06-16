@@ -22,14 +22,14 @@ namespace <#= model.NameSpace #>
 		#region Input
 <# foreach (var input in model.Inputs) { #>
 		//In
-		public Input<<#= input.NodePort.Type #>> <#= input.NodeName #>_<#= input.NodePort.Name #> => <#= input.NodeName #>.<#= input.NodePort.Name #>;
+		public Input<<#= input.NodePort.GetNodePortType() #>> <#= input.Name #> => <#= input.NodeName #>.<#= input.NodePort.Name #>;
 <# } #>
 		#endregion
 	
 		#region Output
 <# foreach (var output in model.Outputs) { #>
 		//Out
-		public Output<<#= output.NodePort.Type #>> <#= output.NodeName #>_<#= output.NodePort.Name #> => <#= output.NodeName #>.<#= output.NodePort.Name #>;
+		public Output<<#= output.NodePort.GetNodePortType() #>> <#= output.Name #> => <#= output.NodeName #>.<#= output.NodePort.Name #>;
 <# } #>
 		#endregion
 
@@ -40,10 +40,10 @@ namespace <#= model.NameSpace #>
 <# } #>
 		}
 
-		public void Run ( <#= string.Join(", ", model.Inputs.Select(i => $"{i.NodePort.Type} arg{i.NodeName}_{i.NodePort.Name}")) #> )
+		public void Run ( <#= string.Join(", ", model.Inputs.Select(i => $"{i.NodePort.GetNodePortType()} arg{i.Name}")) #> )
 		{
 <# foreach (var input in model.Inputs) { #>
-			<#= input.NodeName #>.<#= input.NodePort.Name #>.SetValueDirectly(arg<#= input.NodeName #>_<#= input.NodePort.Name #>);
+			<#= input.NodeName #>.<#= input.NodePort.Name #>.SetValueDirectly(arg<#= input.Name #>);
 <# } #>
 		}
 	}	

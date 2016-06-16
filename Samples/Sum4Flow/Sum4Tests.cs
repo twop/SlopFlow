@@ -12,7 +12,7 @@ namespace Sum4Flow
       var sum4 = new Sum4();
       sum4.Run(1,1,1,1);
 
-      Assert.AreEqual(4, sum4.ResultNode_Result.Value);
+      Assert.AreEqual(4, sum4.Output.Value);
     }
 
     [Test]
@@ -20,7 +20,7 @@ namespace Sum4Flow
     {
       var sum4 = new Sum4();
       int eventValue = 0;
-      sum4.ResultNode_Result.Complete += (v) => eventValue = v;
+      sum4.Output.Complete += (v) => eventValue = v;
 
       sum4.Run(1, 1, 1, 1);
 
@@ -32,12 +32,12 @@ namespace Sum4Flow
     public void SetValueToAll4Inputs_SetsValueToOutput()
     {
       var sum4 = new Sum4();
-      sum4.InputNode1_Val1.SetValueDirectly(1);
-      sum4.InputNode1_Val2.SetValueDirectly(1);
-      sum4.InputNode2_Val1.SetValueDirectly(1);
-      sum4.InputNode2_Val2.SetValueDirectly(1);
+      sum4.Input1.SetValueDirectly(1);
+      sum4.Input2.SetValueDirectly(1);
+      sum4.Input3.SetValueDirectly(1);
+      sum4.Input4.SetValueDirectly(1);
 
-      Assert.AreEqual(4, sum4.ResultNode_Result.Value);
+      Assert.AreEqual(4, sum4.Output.Value);
     }
   }
 }

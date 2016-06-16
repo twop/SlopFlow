@@ -18,7 +18,7 @@ namespace Flow.CSharp.CodeGen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+    #line 1 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     internal partial class FlowTemplate : FlowTemplateBase
     {
@@ -32,245 +32,224 @@ namespace Flow.CSharp.CodeGen
                     "---------------------------\r\n// Auto-generated\r\n// -----------------------------" +
                     "-------------------------------------------------\r\nnamespace ");
             
-            #line 12 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 12 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.NameSpace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\tpublic class ");
             
-            #line 14 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 14 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.FlowName));
             
             #line default
             #line hidden
             this.Write("\r\n\t{\r\n\t\t#region Nodes\r\n");
             
-            #line 17 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 17 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  foreach (var node in model.FlowNodes) { 
             
             #line default
             #line hidden
             this.Write("\t\tprivate readonly ");
             
-            #line 18 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 18 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(node.NodeType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 18 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 18 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(node.Name));
             
             #line default
             #line hidden
             this.Write(" = new ");
             
-            #line 18 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 18 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(node.NodeType));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 19 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 19 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t#endregion\r\n\r\n\t\t#region Input\r\n");
             
-            #line 23 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 23 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  foreach (var input in model.Inputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t//In\r\n\t\tpublic Input<");
             
-            #line 25 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.Type));
+            #line 25 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 25 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodeName));
-            
-            #line default
-            #line hidden
-            this.Write("_");
-            
-            #line 25 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.Name));
+            #line 25 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(input.Name));
             
             #line default
             #line hidden
             this.Write(" => ");
             
-            #line 25 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 25 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.NodeName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 25 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 25 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 26 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 26 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t#endregion\r\n\t\r\n\t\t#region Output\r\n");
             
-            #line 30 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 30 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  foreach (var output in model.Outputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t//Out\r\n\t\tpublic Output<");
             
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(output.NodePort.Type));
+            #line 32 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(output.NodePort.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(output.NodeName));
-            
-            #line default
-            #line hidden
-            this.Write("_");
-            
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(output.NodePort.Name));
+            #line 32 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(output.Name));
             
             #line default
             #line hidden
             this.Write(" => ");
             
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 32 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(output.NodeName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 32 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(output.NodePort.Name));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 33 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 33 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t#endregion\r\n\r\n\t\tpublic ");
             
-            #line 36 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 36 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.FlowName));
             
             #line default
             #line hidden
             this.Write("()\r\n\t\t{\r\n");
             
-            #line 38 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 38 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  foreach (var connector in model.NodeConnectors) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t");
             
-            #line 39 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 39 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(connector.ToNodeName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 39 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 39 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(connector.ToPort));
             
             #line default
             #line hidden
             this.Write(".SetDependency(");
             
-            #line 39 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 39 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(connector.FromNodeName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 39 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 39 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(connector.FromPort));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 40 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 40 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t}\r\n\r\n\t\tpublic void Run ( ");
             
-            #line 43 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", model.Inputs.Select(i => $"{i.NodePort.Type} arg{i.NodeName}_{i.NodePort.Name}"))));
+            #line 43 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", model.Inputs.Select(i => $"{i.NodePort.GetNodePortType()} arg{i.Name}"))));
             
             #line default
             #line hidden
             this.Write(" )\r\n\t\t{\r\n");
             
-            #line 45 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 45 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  foreach (var input in model.Inputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t");
             
-            #line 46 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 46 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.NodeName));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 46 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 46 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.Name));
             
             #line default
             #line hidden
             this.Write(".SetValueDirectly(arg");
             
-            #line 46 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodeName));
-            
-            #line default
-            #line hidden
-            this.Write("_");
-            
-            #line 46 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.NodePort.Name));
+            #line 46 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(input.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 47 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+            #line 47 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
  } 
             
             #line default
@@ -279,7 +258,7 @@ namespace Flow.CSharp.CodeGen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
+        #line 1 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\FlowTemplate.tt"
 
 private global::Flow.CodeGen.Models.FlowModel _modelField;
 

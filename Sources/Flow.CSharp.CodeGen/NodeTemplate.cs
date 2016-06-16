@@ -18,7 +18,7 @@ namespace Flow.CSharp.CodeGen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+    #line 1 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     internal partial class NodeTemplate : NodeTemplateBase
     {
@@ -32,112 +32,112 @@ namespace Flow.CSharp.CodeGen
                     "---------------------------\r\n// Auto-generated\r\n// -----------------------------" +
                     "-------------------------------------------------\r\nnamespace ");
             
-            #line 12 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 12 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.NameSpace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n\tpartial class ");
             
-            #line 14 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 14 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Type));
             
             #line default
             #line hidden
             this.Write(": Node\r\n\t{\r\n\t\t#region Input\r\n");
             
-            #line 17 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 17 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  foreach (var input in model.Inputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t//In\r\n\t\tpublic readonly Input<");
             
-            #line 19 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.Type));
+            #line 19 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(input.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 19 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 19 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Name));
             
             #line default
             #line hidden
             this.Write(" = new Input<");
             
-            #line 19 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(input.Type));
+            #line 19 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(input.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write(">();\r\n");
             
-            #line 20 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 20 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t#endregion\r\n\r\n\t\t#region Output\r\n");
             
-            #line 24 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 24 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  foreach (var output in model.Outputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t//Out\r\n\t\tpublic readonly Output<");
             
-            #line 26 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(output.Type));
+            #line 26 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(output.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 26 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 26 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(output.Name));
             
             #line default
             #line hidden
             this.Write(" = new Output<");
             
-            #line 26 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(output.Type));
+            #line 26 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(output.GetNodePortType()));
             
             #line default
             #line hidden
             this.Write(">();\r\n");
             
-            #line 27 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 27 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("\t\t#endregion\r\n\r\n\t\tpublic ");
             
-            #line 30 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 30 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Type));
             
             #line default
             #line hidden
             this.Write("()\r\n\t\t{\r\n");
             
-            #line 32 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 32 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  foreach (var input in model.Inputs) { 
             
             #line default
             #line hidden
             this.Write("\t\t\tAddInput(");
             
-            #line 33 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 33 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Name));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 34 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+            #line 34 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
  } 
             
             #line default
@@ -146,7 +146,7 @@ namespace Flow.CSharp.CodeGen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Work\UniFlow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
+        #line 1 "C:\Work\Flow\Sources\Flow.CSharp.CodeGen\NodeTemplate.tt"
 
 private global::Flow.CodeGen.Models.NodeModel _modelField;
 

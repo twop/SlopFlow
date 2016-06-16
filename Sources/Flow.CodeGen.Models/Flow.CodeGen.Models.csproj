@@ -41,6 +41,7 @@
     <Compile Include="NodeConnector.cs" />
     <Compile Include="NodeModel.cs" />
     <Compile Include="NodePort.cs" />
+    <Compile Include="PredefinedType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,14 +16,14 @@ namespace <#= model.NameSpace #>
 		#region Input
 <# foreach (var input in model.Inputs) { #>
 		//In
-		public readonly Input<<#= input.Type #>> <#= input.Name #> = new Input<<#= input.Type #>>();
+		public readonly Input<<#= input.GetNodePortType() #>> <#= input.Name #> = new Input<<#= input.GetNodePortType() #>>();
 <# } #>
 		#endregion
 
 		#region Output
 <# foreach (var output in model.Outputs) { #>
 		//Out
-		public readonly Output<<#= output.Type #>> <#= output.Name #> = new Output<<#= output.Type #>>();
+		public readonly Output<<#= output.GetNodePortType() #>> <#= output.Name #> = new Output<<#= output.GetNodePortType() #>>();
 <# } #>
 		#endregion
 

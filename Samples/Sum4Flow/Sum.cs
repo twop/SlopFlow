@@ -9,14 +9,14 @@ namespace Samples.Sum4Flow
 	{
 		#region Input
 		//In
-		public readonly Input<System.Int32> Val1 = new Input<System.Int32>();
+		public readonly Input<int> Val1 = new Input<int>();
 		//In
-		public readonly Input<System.Int32> Val2 = new Input<System.Int32>();
+		public readonly Input<int> Val2 = new Input<int>();
 		#endregion
 
 		#region Output
 		//Out
-		public readonly Output<System.Int32> Result = new Output<System.Int32>();
+		public readonly Output<int> Result = new Output<int>();
 		#endregion
 
 		public Sum()
